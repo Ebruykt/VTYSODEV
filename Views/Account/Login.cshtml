@@ -1,0 +1,27 @@
+﻿@model StudentModel
+@{
+    ViewData["Title"] = "Giriş Yap";
+}
+
+<h2>Giriş Yap</h2>
+
+<form asp-controller="Account" asp-action="Login" method="post">
+    <div>
+        <label asp-for="@Model.StudentID">Kullanıcı Adı:</label>
+        <input type="text" asp-for="@Model.StudentID" required />
+    </div>
+
+    <div>
+        <label asp-for="@Model.Password">Şifre:</label>
+        <input type="password" asp-for="@Model.Password" required />
+    </div>
+
+    <div>
+        <button type="submit">Giriş Yap</button>
+    </div>
+</form>
+
+@if (ViewData["ErrorMessage"] != null)
+{
+    <p style="color:red;">@ViewData["ErrorMessage"]</p>
+}

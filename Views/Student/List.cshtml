@@ -1,0 +1,29 @@
+﻿@model IEnumerable<VTYSODEV.Models.StudentModel>
+
+<h2>Öğrenci Listesi</h2>
+
+<table border="1" cellpadding="10" cellspacing="0">
+    <thead>
+        <tr>
+            <th>Öğrenci ID</th>
+            <th>Ad</th>
+            <th>Soyad</th>
+            <th>Email</th>
+            <th>Danışman</th>
+            <th>Kayıt Tarihi</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var student in Model)
+        {
+            <tr>
+                <td>@student.StudentID</td>
+                <td>@student.FirstName</td>
+                <td>@student.LastName</td>
+                <td>@student.Email</td>
+                <td>@student.AdvisorName</td>
+                <td>@student.EnrollmentDate</td>
+            </tr>
+        }
+    </tbody>
+</table>
